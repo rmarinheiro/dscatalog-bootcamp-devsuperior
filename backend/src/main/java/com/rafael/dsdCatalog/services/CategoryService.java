@@ -2,6 +2,7 @@ package com.rafael.dsdcatalog.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -34,6 +35,13 @@ public class CategoryService {
 		
 		
 		
+	}
+
+	@Transactional(readOnly = true)
+	public CategoryDTO findById(Long id) {
+		Optional<Category> obj = categoryRepository.findById(id);
+		Category entity = obj.get();
+		return new CategoryDTO(entity);
 	}
 
 }
