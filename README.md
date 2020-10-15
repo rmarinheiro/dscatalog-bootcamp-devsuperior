@@ -10,7 +10,7 @@ spring.jpa.open-in-view=false
 
 <h3>application-test.properties</h3>
 
-spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.url=jdbc:h2:mem:testdb <br/>
 spring.datasource.username=sa
 spring.datasource.password=
 
