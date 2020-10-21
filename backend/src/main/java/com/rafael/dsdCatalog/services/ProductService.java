@@ -16,8 +16,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.rafael.dsdcatalog.dto.CategoryDTO;
 import com.rafael.dsdcatalog.dto.ProductDTO;
+import com.rafael.dsdcatalog.entities.Category;
 import com.rafael.dsdcatalog.entities.Product;
+import com.rafael.dsdcatalog.repositories.CategoryRepository;
 import com.rafael.dsdcatalog.repositories.ProductRepository;
 import com.rafael.dsdcatalog.services.exception.DataBaseException;
 import com.rafael.dsdcatalog.services.exception.ResourceNotFoundException;
@@ -29,6 +32,9 @@ public class ProductService {
 	
 	@Autowired
 	private ProductRepository productRepository;
+	
+	@Autowired
+	private CategoryRepository categoryRepository;
 	
 	@Transactional(readOnly = true)
 	public Page<ProductDTO> findAllPaged(PageRequest pageRequest){
@@ -52,16 +58,18 @@ public class ProductService {
 	@Transactional
 	public ProductDTO insert(ProductDTO dto) {
 		Product entity = new Product();
-		//entity.setName(dto.getName());
+		copyDtoToEntity(dto,entity);
 		entity = productRepository.save(entity);
 		return new ProductDTO(entity);
 	}
+
+	
 
 	@Transactional
 	public ProductDTO update(Long id , ProductDTO dto) {
 		try {
 			Product entity = productRepository.getOne(id);
-			//entity.setName(dto.getName());
+			copyDtoToEntity(dto,entity);
 			entity = productRepository.save(entity);
 			return new ProductDTO(entity);
 		} catch (EntityNotFoundException e) {
@@ -82,7 +90,22 @@ public class ProductService {
 		
 	}
 	
-	
+	private void copyDtoToEntity(ProductDTO dto, Product entity) {
+		
+		entity.setName(dto.getName());
+		entity.setDescription(dto.getDescription());
+		entity.setDate(dto.getDate());
+		entity.setImgUrl(entity.getImgUrl());
+		entity.setPrice(dto.getPrice());
+		
+		entity.getCategories().clear();
+		for(CategoryDTO catDTO : dto.getCategories()) {
+			Category category = categoryRepository.getOne(catDTO.getId());
+			entity.getCategories().add(category);
+		}
+		
+		
+	}
 	
 
 }
