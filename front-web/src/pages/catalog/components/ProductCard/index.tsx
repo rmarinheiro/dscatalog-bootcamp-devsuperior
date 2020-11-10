@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.scss';
-import {ReactComponent as ProductImage } from '../../../../core/assets/images/products.svg';
-import ProductPrice from '../../../../core/components/ProductPrice/Index';
-import { Product } from '../../../../core/types/Products';
+import {ReactComponent as ProductImage } from 'core/assets/images/products.svg';
+import ProductPrice from 'core/components/ProductPrice/Index';
+import { Product } from 'core/types/Products';
 
 type Props={
     product : Product;
