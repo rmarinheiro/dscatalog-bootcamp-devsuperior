@@ -1,9 +1,9 @@
 .pagination-container{
     display: flex;
-    justify-content: center;
-    height: 50px;
+    justify-content:center;
+    height: 40px;
     align-items: center;
-    //border: 1px solid #000;
+   // border: 1px solid #000;
     margin-top:35px;
 
 }
@@ -32,13 +32,21 @@
 .pagination-previous{
     transform: rotate(-180deg);
     margin-right: 25px;
-    color:#E1E1E1;
-    cursor: pointer;
 }
 
 .pagination-next{
     margin-left: 15px;
-    color:  #407BFF;
+    
     cursor: pointer;
+}
+
+.page-active{
+    cursor: pointer;
+    color:  #407BFF;
+}
+
+.page-inactive{
+    color:#E1E1E1;
+    pointer-events: none;
 }
 

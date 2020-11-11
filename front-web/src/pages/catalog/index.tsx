@@ -14,6 +14,7 @@ const Catalog = () => {
  
     const[productsResponse,setProductsResponse] = useState<ProductsResponse>();
     const [isLoading,setIsLoading] = useState(false);
+    const [activePage ,setActivePage] = useState(0);
 
     console.log(productsResponse);
 
@@ -21,7 +22,7 @@ const Catalog = () => {
      useEffect(()=>{
       
             const params ={
-                page:0,
+                page:activePage,
                 linesPerPage:12
             }
 
@@ -33,7 +34,7 @@ const Catalog = () => {
                 //finaliza o loader
                 setIsLoading(false);
             })
-     },[]);
+     },[activePage]);
 
     return ( 
     
@@ -49,12 +50,16 @@ const Catalog = () => {
     
                      </Link>   
                 ))
-            )}
-            
-            <Pagination/>
+            )}   
            
         </div>
-       
+        {productsResponse && (
+            <Pagination 
+             totalPages={productsResponse.totalPages}
+             activePage={activePage}
+             onChange={page=> setActivePage(page)}
+             />
+        )} 
     </div>
     ) 
 };
