@@ -5,6 +5,10 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+
 import com.rafael.dsdcatalog.entities.Product;
 import com.rafael.dsdcatalog.entities.User;
 
@@ -13,8 +17,12 @@ public class UserDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	private Long id;
+	
+	@NotBlank(message = "O Primeiro Nome não Pode ser Vazio")
 	private String firstName;
 	private String lastName;
+	
+	@Email(message = "Informe um email valido")
 	private String email;
 	
 	Set<RoleDTO> roles = new HashSet<>();
