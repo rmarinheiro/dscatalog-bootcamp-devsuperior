@@ -24,6 +24,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.rafael.dsdcatalog.dto.UserDTO;
 import com.rafael.dsdcatalog.dto.UserInsertDTO;
+import com.rafael.dsdcatalog.dto.UserUpdateDTO;
 import com.rafael.dsdcatalog.entities.User;
 import com.rafael.dsdcatalog.services.UserService;
 
@@ -63,10 +64,10 @@ public class UserResource {
 	}
 	
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<UserDTO> update(@PathVariable Long id,@Valid @RequestBody UserDTO dto){
-		dto = userService.update(id,dto);
+	public ResponseEntity<UserDTO> update(@PathVariable Long id,@Valid @RequestBody UserUpdateDTO dto){
+		UserDTO newDto = userService.update(id,dto);
 		
-		return ResponseEntity.ok().body(dto);
+		return ResponseEntity.ok().body(newDto);
 		
 	}
 	
