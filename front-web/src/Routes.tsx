@@ -5,6 +5,7 @@ import Catalog from './pages/catalog';
 import Admin from './pages/admin';
 import Navbar from './core/components/Navbar';
 import ProductDetails from './pages/catalog/components/ProductDetails';
+import Auth from './pages/auth';
 
 
 const Routers = () =>(
@@ -15,23 +16,22 @@ const Routers = () =>(
                 <Home/>
             </Route>
 
-        </Switch>
-
-         <Switch>
             <Route path="/products" exact>
                 <Catalog/>
             </Route>
 
-        </Switch>
 
-         <Switch>
+        
             <Route path="/products/:productsId">
                 <ProductDetails/>
             </Route>
+            
+            <Redirect from="/admin/auth" to="/admin/auth/login" exact/>
+            <Route path="/admin/auth">
+                <Auth />  
+            </Route>         
+   
 
-        </Switch>
-
-        <Switch>
             <Redirect from="/admin" to="/admin/products" exact/>
             <Route path="/admin">
                 <Admin/>
