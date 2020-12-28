@@ -3,25 +3,27 @@ import Navbar from './components/Navbar';
 import './styles.scss';
 import { Switch, Route} from 'react-router';
 import Products from './Products';
+import PrivateRoute from 'core/components/Routes/PrivateRoute';
+
 const Admin = () => (
    <div className="admin-container">
        <Navbar />
        <div className="admin-content">
             <Switch>
-                <Route path="/admin/products">
+                <PrivateRoute path="/admin/products">
                     <Products/>
 
-                </Route>
+                </PrivateRoute>
 
-                  <Route path="/admin/categories">
+                  <PrivateRoute path="/admin/categories">
                     <h1>Categories</h1>
 
-                </Route>
+                </PrivateRoute>
 
-                  <Route path="/admin/users">
+                  <PrivateRoute path="/admin/users" allowRoutes={['ROLE_ADMIN']}>
                     <h1>Users</h1>
 
-                </Route>
+                </PrivateRoute>
 
 
             </Switch>
