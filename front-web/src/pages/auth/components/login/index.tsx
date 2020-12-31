@@ -7,7 +7,7 @@ import ButtonIcon from 'core/components/ButtonIcon/Index';
 import { makeLogin } from 'core/utils/request';
 import { saveSessionData } from 'core/utils/auth';
 
-type FormData = {
+type formState = {
     username:string;
     password: string;
 }
@@ -17,14 +17,14 @@ type LocationState = {
 }
 
 const Login =  () => {
-    const { register, handleSubmit,errors } = useForm<FormData>();
+    const { register, handleSubmit,errors } = useForm<formState>();
     const [hasError,setHasError] = useState(false); 
     const history = useHistory();
     const location = useLocation<LocationState>();
 
     const { from } = location.state || { from: { pathname: "/admin" } };
 
-    const onSubmit = (data:FormData) =>{
+    const onSubmit = (data:formState) =>{
         console.log(data);
         makeLogin(data)
         .then(response =>{
@@ -84,7 +84,7 @@ const Login =  () => {
 
                  </div>
 
-                <Link to="/admin/auth/recover" className="login-link-recover">
+                <Link to="/auth/recover" className="login-link-recover">
                     Esqueci a Senha?
                 </Link> 
                 <div className="login-submit">
@@ -95,7 +95,7 @@ const Login =  () => {
                         Não tem Cadastro
                     </span>
                 </div>
-                <Link to="/admin/auth/register" className="login-link-register">
+                <Link to="/auth/register" className="login-link-register">
                     Cadastrar
                 </Link>
             </form>
