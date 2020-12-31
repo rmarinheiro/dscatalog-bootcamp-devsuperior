@@ -2,6 +2,8 @@ import React from 'react';
 import './core/assets/styles/custom.scss';
 import './App.scss';
 import Routers from './Routes';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -9,7 +11,10 @@ import Routers from './Routes';
 const App = () =>{
 
     return (
-       <Routers />
+        <React.Fragment>
+            <ToastContainer/>
+            <Routers />
+        </React.Fragment>
     )
 }
 
