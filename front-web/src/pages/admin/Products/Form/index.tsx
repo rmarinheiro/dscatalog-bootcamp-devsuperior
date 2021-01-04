@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BaseForm from '../../../catalog/components/BaseForm';
 import './styles.scss'
-import {  makePrivateRequest } from 'core/utils/request';
+import {  makePrivateRequest, makeRequest } from 'core/utils/request';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 
 type FormState ={
     name:string;
@@ -13,17 +13,42 @@ type FormState ={
     imgUrl: string;
 }
 
+type ParamsType = {
+    productsId: string;
+}
+
+
 const Form = () => {
 
-    const { register,handleSubmit, errors } = useForm<FormState>();
+    const { register,handleSubmit, errors,setValue } = useForm<FormState>();
     const  history = useHistory();
+    const { productsId } = useParams<ParamsType>();
+    const isEditing = productsId !== 'create';
+    const formTitle = isEditing ?'Editar Produto' : 'Cadastrar Produto';
+
+    useEffect(() => {
+        if(isEditing){
+            makeRequest({ url: `/products/${productsId}` })
+            .then(response => {
+                setValue('name',response.data.name)
+                setValue('price',response.data.price)
+                setValue('description',response.data.description)
+                setValue('imgUrl',response.data.imgUrl)
+            }) 
+        }
+            
+    }, [productsId,isEditing,setValue]);
 
 
     const onSubmit = (data:FormState) => {
       
 
         //console.log(data);
-        makePrivateRequest({url:'/products',method:'POST', data:data})
+        makePrivateRequest({
+        url: isEditing ? `/products/${productsId}` : '/products',
+        method: isEditing ? 'PUT': 'POST', 
+        data
+        })
         .then(()=>{
             toast.info('Produto Cadastrado com Sucesso!!');
             history.push("/admin/products");
@@ -39,7 +64,9 @@ const Form = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <BaseForm title="Cadastrar Produto">
+            <BaseForm 
+            title= {formTitle }
+            >
                 
                 <div className="row">
                     <div className="col-6">
