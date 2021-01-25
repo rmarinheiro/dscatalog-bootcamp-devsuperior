@@ -5,6 +5,8 @@ import { makeRequest, makePrivateRequest } from 'core/utils/request';
 import { ProductsResponse } from 'core/types/Products';
 import Pagination from 'core/components/Pagination';
 import { toast } from '../../../../../node_modules/react-toastify';
+import  CardLoader from '../Loader/ProductCardLoaders';
+
 
 const List = () =>{
     const[productsResponse,setProductsResponse] = useState<ProductsResponse>();
@@ -65,9 +67,12 @@ const List = () =>{
                 Adicionar
             </button>
             <div className="admin-list-container">
-                {productsResponse?.content.map(products=>(
-                    <Card product={products} key={products.id} onRemove={onRemove}/>
-                ))}
+                {isLoading ? <CardLoader/> :(
+                    productsResponse?.content.map(products =>(
+                        <Card product={products} key={products.id} onRemove={onRemove}/>
+                    ))
+                )}
+                
 
             {productsResponse && (
             <Pagination 

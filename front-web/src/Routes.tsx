@@ -9,6 +9,7 @@ import Auth from './pages/auth';
 import history from './core/utils/history';
 
 
+
 const Routers = () =>(
     <Router history = {history}>
         <Navbar />
