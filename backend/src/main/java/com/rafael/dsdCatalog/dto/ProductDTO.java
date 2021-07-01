@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.dto;
+package com.rafael.dsdCatalog.dto;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -11,8 +11,8 @@ import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
-import com.rafael.dsdcatalog.entities.Category;
-import com.rafael.dsdcatalog.entities.Product;
+import com.rafael.dsdCatalog.entities.Category;
+import com.rafael.dsdCatalog.entities.Product;
 
 
 

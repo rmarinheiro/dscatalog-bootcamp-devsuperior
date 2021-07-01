@@ -1,6 +1,6 @@
-package com.rafael.dsdcatalog.dto;
+package com.rafael.dsdCatalog.dto;
 
-import com.rafael.dsdcatalog.services.validation.UserUpdateValid;
+import com.rafael.dsdCatalog.services.validation.UserUpdateValid;
 
 @UserUpdateValid
 public class UserUpdateDTO extends UserDTO {

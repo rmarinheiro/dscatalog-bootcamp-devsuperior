@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.config;
+package com.rafael.dsdCatalog.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

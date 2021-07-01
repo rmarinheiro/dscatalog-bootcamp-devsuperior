@@ -1,8 +1,8 @@
-package com.rafael.dsdcatalog.dto;
+package com.rafael.dsdCatalog.dto;
 
 import java.io.Serializable;
 
-import com.rafael.dsdcatalog.entities.Category;
+import com.rafael.dsdCatalog.entities.Category;
 
 public class CategoryDTO implements Serializable {
 	

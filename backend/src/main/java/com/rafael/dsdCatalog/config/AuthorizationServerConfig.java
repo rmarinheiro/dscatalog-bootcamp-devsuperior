@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.config;
+package com.rafael.dsdCatalog.config;
 
 import java.util.Arrays;
 
@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
-import com.rafael.dsdcatalog.components.JwtTokenEnhancer;
+import com.rafael.dsdCatalog.components.JwtTokenEnhancer;
 
 @Configuration
 @EnableAuthorizationServer

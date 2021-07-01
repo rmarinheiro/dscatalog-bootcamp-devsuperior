@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.resources.exceptions;
+package com.rafael.dsdCatalog.resources.exceptions;
 
 import java.time.Instant;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.rafael.dsdcatalog.services.exception.DataBaseException;
-import com.rafael.dsdcatalog.services.exception.ResourceNotFoundException;
+import com.rafael.dsdCatalog.services.exception.DataBaseException;
+import com.rafael.dsdCatalog.services.exception.ResourceNotFoundException;
 
 
 

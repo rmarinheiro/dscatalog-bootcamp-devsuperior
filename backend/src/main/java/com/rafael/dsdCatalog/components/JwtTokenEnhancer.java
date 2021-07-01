@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.components;
+package com.rafael.dsdCatalog.components;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,8 +11,8 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.stereotype.Component;
 
 
-import com.rafael.dsdcatalog.entities.User;
-import com.rafael.dsdcatalog.repositories.UserRepository;
+import com.rafael.dsdCatalog.entities.User;
+import com.rafael.dsdCatalog.repositories.UserRepository;
 
 @Component
 public class JwtTokenEnhancer implements TokenEnhancer {

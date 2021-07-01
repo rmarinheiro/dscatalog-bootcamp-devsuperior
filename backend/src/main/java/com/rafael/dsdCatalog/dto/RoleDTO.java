@@ -1,8 +1,8 @@
-package com.rafael.dsdcatalog.dto;
+package com.rafael.dsdCatalog.dto;
 
 import java.io.Serializable;
 
-import com.rafael.dsdcatalog.entities.Role;
+import com.rafael.dsdCatalog.entities.Role;
 
 public class RoleDTO implements Serializable {
 	

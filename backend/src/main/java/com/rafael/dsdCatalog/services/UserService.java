@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.services;
+package com.rafael.dsdCatalog.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,16 +22,16 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rafael.dsdcatalog.dto.RoleDTO;
-import com.rafael.dsdcatalog.dto.UserDTO;
-import com.rafael.dsdcatalog.dto.UserInsertDTO;
-import com.rafael.dsdcatalog.dto.UserUpdateDTO;
-import com.rafael.dsdcatalog.entities.Role;
-import com.rafael.dsdcatalog.entities.User;
-import com.rafael.dsdcatalog.repositories.RoleRepository;
-import com.rafael.dsdcatalog.repositories.UserRepository;
-import com.rafael.dsdcatalog.services.exception.DataBaseException;
-import com.rafael.dsdcatalog.services.exception.ResourceNotFoundException;
+import com.rafael.dsdCatalog.dto.RoleDTO;
+import com.rafael.dsdCatalog.dto.UserDTO;
+import com.rafael.dsdCatalog.dto.UserInsertDTO;
+import com.rafael.dsdCatalog.dto.UserUpdateDTO;
+import com.rafael.dsdCatalog.entities.Role;
+import com.rafael.dsdCatalog.entities.User;
+import com.rafael.dsdCatalog.repositories.RoleRepository;
+import com.rafael.dsdCatalog.repositories.UserRepository;
+import com.rafael.dsdCatalog.services.exception.DataBaseException;
+import com.rafael.dsdCatalog.services.exception.ResourceNotFoundException;
 
 
 

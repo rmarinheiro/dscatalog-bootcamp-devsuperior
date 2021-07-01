@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.dto;
+package com.rafael.dsdCatalog.dto;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -9,8 +9,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
-import com.rafael.dsdcatalog.entities.Product;
-import com.rafael.dsdcatalog.entities.User;
+import com.rafael.dsdCatalog.entities.Product;
+import com.rafael.dsdCatalog.entities.User;
 
 public class UserDTO implements Serializable {
 	

@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.config;
+package com.rafael.dsdCatalog.config;
 
 import java.util.Arrays;
 

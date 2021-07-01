@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.resources;
+package com.rafael.dsdCatalog.resources;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -22,11 +22,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.rafael.dsdcatalog.dto.UserDTO;
-import com.rafael.dsdcatalog.dto.UserInsertDTO;
-import com.rafael.dsdcatalog.dto.UserUpdateDTO;
-import com.rafael.dsdcatalog.entities.User;
-import com.rafael.dsdcatalog.services.UserService;
+import com.rafael.dsdCatalog.dto.UserDTO;
+import com.rafael.dsdCatalog.dto.UserInsertDTO;
+import com.rafael.dsdCatalog.dto.UserUpdateDTO;
+import com.rafael.dsdCatalog.entities.User;
+import com.rafael.dsdCatalog.services.UserService;
 
 
 @RestController

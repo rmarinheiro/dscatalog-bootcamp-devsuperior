@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.resources.exceptions;
+package com.rafael.dsdCatalog.resources.exceptions;
 
 import java.io.Serializable;
 

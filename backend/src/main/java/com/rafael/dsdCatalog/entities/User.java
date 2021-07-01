@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.entities;
+package com.rafael.dsdCatalog.entities;
 
 import java.io.Serializable;
 import java.util.Collection;

@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog;
+package com.rafael.dsdCatalog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.services.exception;
+package com.rafael.dsdCatalog.services.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
 

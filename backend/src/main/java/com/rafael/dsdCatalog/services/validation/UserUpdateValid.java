@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.services.validation;
+package com.rafael.dsdCatalog.services.validation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

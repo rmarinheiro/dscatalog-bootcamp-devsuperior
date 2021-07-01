@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.services.validation;
+package com.rafael.dsdCatalog.services.validation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,10 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.rafael.dsdcatalog.dto.UserInsertDTO;
-import com.rafael.dsdcatalog.entities.User;
-import com.rafael.dsdcatalog.repositories.UserRepository;
-import com.rafael.dsdcatalog.resources.exceptions.FieldMessage;
+import com.rafael.dsdCatalog.dto.UserInsertDTO;
+import com.rafael.dsdCatalog.entities.User;
+import com.rafael.dsdCatalog.repositories.UserRepository;
+import com.rafael.dsdCatalog.resources.exceptions.FieldMessage;
 
 public class UserInsertValidator implements ConstraintValidator<UserInsertValid, UserInsertDTO> {
 	

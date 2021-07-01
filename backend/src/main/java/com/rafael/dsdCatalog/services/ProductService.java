@@ -1,4 +1,4 @@
-package com.rafael.dsdcatalog.services;
+package com.rafael.dsdCatalog.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,14 +16,14 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rafael.dsdcatalog.dto.CategoryDTO;
-import com.rafael.dsdcatalog.dto.ProductDTO;
-import com.rafael.dsdcatalog.entities.Category;
-import com.rafael.dsdcatalog.entities.Product;
-import com.rafael.dsdcatalog.repositories.CategoryRepository;
-import com.rafael.dsdcatalog.repositories.ProductRepository;
-import com.rafael.dsdcatalog.services.exception.DataBaseException;
-import com.rafael.dsdcatalog.services.exception.ResourceNotFoundException;
+import com.rafael.dsdCatalog.dto.CategoryDTO;
+import com.rafael.dsdCatalog.dto.ProductDTO;
+import com.rafael.dsdCatalog.entities.Category;
+import com.rafael.dsdCatalog.entities.Product;
+import com.rafael.dsdCatalog.repositories.CategoryRepository;
+import com.rafael.dsdCatalog.repositories.ProductRepository;
+import com.rafael.dsdCatalog.services.exception.DataBaseException;
+import com.rafael.dsdCatalog.services.exception.ResourceNotFoundException;
 
 
 
